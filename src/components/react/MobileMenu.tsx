@@ -1,6 +1,6 @@
-import * as Dialog from '@radix-ui/react-dialog';
-import { Menu, X } from 'lucide-react';
-import { NAVIGATION } from '../../config/site';
+import * as Dialog from "@radix-ui/react-dialog";
+import { Menu, X } from "lucide-react";
+import { NAVIGATION } from "../../config/site";
 
 export default function MobileMenu() {
   return (
@@ -17,7 +17,9 @@ export default function MobileMenu() {
         <Dialog.Overlay className="fixed inset-0 bg-black/50 z-50 lg:hidden" />
         <Dialog.Content className="fixed top-0 left-0 right-0 bg-white border-b border-slate-200 z-50 lg:hidden max-h-[85vh] overflow-y-auto">
           <Dialog.Title className="sr-only">导航菜单</Dialog.Title>
-          <Dialog.Description className="sr-only">主导航菜单</Dialog.Description>
+          <Dialog.Description className="sr-only">
+            主导航菜单
+          </Dialog.Description>
           <div className="container mx-auto px-4 py-6 space-y-2">
             {NAVIGATION.map((item) => (
               <Dialog.Close asChild key={item.href}>
@@ -55,4 +57,3 @@ export default function MobileMenu() {
     </Dialog.Root>
   );
 }
-

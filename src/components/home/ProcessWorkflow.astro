@@ -1,10 +1,9 @@
 ---
-import { Image } from 'astro:assets';
-
-import discoveryImg from '@assets/photo-1454165804606-c3d57bc86b40.jpg';
-import implementationImg from '@assets/photo-1522071820081-009f0129c71c.jpg';
-import optimizationImg from '@assets/photo-1551288049-bebda4e38f71.jpg';
-import supportGrowthImg from '@assets/photo-1552664730-d307ca884978.jpg';
+import { Image } from "astro:assets";
+import optimizationImg from "@assets/photo-1551288049-bebda4e38f71.jpg";
+import supportGrowthImg from "@assets/photo-1552664730-d307ca884978.jpg";
+import discoveryImg from "@assets/photo-1454165804606-c3d57bc86b40.jpg";
+import implementationImg from "@assets/photo-1522071820081-009f0129c71c.jpg";
 
 interface Step {
   number: number;
@@ -21,43 +20,47 @@ const steps = [
   {
     number: 1,
     title: "数据采集",
-    description: "利用卫星遥感、无人机航测、地面测量等多源手段，全方位获取海量空间地理信息数据。",
+    description:
+      "利用卫星遥感、无人机航测、地面测量等多源手段，全方位获取海量空间地理信息数据。",
     image: discoveryImg,
     alt: "Data Acquisition",
     hoverBorder: "hover:border-blue-500",
     gradient: "from-blue-600/90",
-    textColor: "text-blue-600"
+    textColor: "text-blue-600",
   },
   {
     number: 2,
     title: "智能处理",
-    description: "通过自动化数据生产线与人工智能算法，进行影像校正、三维建模与目标自动识别。",
+    description:
+      "通过自动化数据生产线与人工智能算法，进行影像校正、三维建模与目标自动识别。",
     image: implementationImg,
     alt: "Intelligent Processing",
     hoverBorder: "hover:border-teal-500",
     gradient: "from-teal-600/90",
-    textColor: "text-teal-700"
+    textColor: "text-teal-700",
   },
   {
     number: 3,
     title: "平台管理",
-    description: "构建实景三维与大数据中台，实现多源异构数据的统一汇聚、治理与资产化管理。",
+    description:
+      "构建实景三维与大数据中台，实现多源异构数据的统一汇聚、治理与资产化管理。",
     image: optimizationImg,
     alt: "Platform Management",
     hoverBorder: "hover:border-blue-500",
     gradient: "from-blue-600/90",
-    textColor: "text-blue-600"
+    textColor: "text-blue-600",
   },
   {
     number: 4,
     title: "智慧应用",
-    description: "面向自然资源、应急、环保、交通等行业，提供定制化的智慧监测与辅助决策服务。",
+    description:
+      "面向自然资源、应急、环保、交通等行业，提供定制化的智慧监测与辅助决策服务。",
     image: supportGrowthImg,
     alt: "Smart Application",
     hoverBorder: "hover:border-teal-500",
     gradient: "from-teal-600/90",
-    textColor: "text-teal-700"
-  }
+    textColor: "text-teal-700",
+  },
 ];
 
 const arrowPath = "M9 5l7 7-7 7";

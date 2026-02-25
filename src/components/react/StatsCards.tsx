@@ -1,4 +1,4 @@
-import { CheckCircle2, TrendingDown, Users, Package, Map } from 'lucide-react';
+import { CheckCircle2, Map, Package, TrendingDown, Users } from "lucide-react";
 
 interface Stat {
   value: string;
@@ -23,7 +23,7 @@ export default function StatsCards({ stats = [] }: Props) {
     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
       {stats?.map((stat, index) => {
         const IconComponent = iconMap[stat.iconName];
-        
+
         return (
           <div
             key={index}
@@ -38,11 +38,12 @@ export default function StatsCards({ stats = [] }: Props) {
             <div className="text-4xl md:text-5xl font-bold bg-linear-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent mb-2">
               {stat.value}
             </div>
-            <div className="text-sm font-medium text-gray-600">{stat.label}</div>
+            <div className="text-sm font-medium text-gray-600">
+              {stat.label}
+            </div>
           </div>
         );
       })}
     </div>
   );
 }
-

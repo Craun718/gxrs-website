@@ -1,4 +1,4 @@
-import { Package, Truck, Users, Globe } from 'lucide-react';
+import { Globe, Package, Truck, Users } from "lucide-react";
 
 interface Stat {
   icon: React.ComponentType<{ className?: string }>;
@@ -7,10 +7,10 @@ interface Stat {
 }
 
 const stats: Stat[] = [
-  { icon: Package, title: 'Total Square Footage', value: '2.25M+' },
-  { icon: Truck, title: 'Delivery Vehicles', value: '200+' },
-  { icon: Users, title: 'Trained Staff', value: '1,000+' },
-  { icon: Globe, title: 'Geographic Reach', value: 'Global' }
+  { icon: Package, title: "Total Square Footage", value: "2.25M+" },
+  { icon: Truck, title: "Delivery Vehicles", value: "200+" },
+  { icon: Users, title: "Trained Staff", value: "1,000+" },
+  { icon: Globe, title: "Geographic Reach", value: "Global" },
 ];
 
 export default function FacilityStats() {
@@ -30,11 +30,12 @@ export default function FacilityStats() {
             <div className="text-3xl md:text-4xl font-bold bg-linear-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent mb-2">
               {stat.value}
             </div>
-            <div className="text-sm font-medium text-gray-600">{stat.title}</div>
+            <div className="text-sm font-medium text-gray-600">
+              {stat.title}
+            </div>
           </div>
         );
       })}
     </div>
   );
 }
-

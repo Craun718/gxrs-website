@@ -1,8 +1,8 @@
 ---
-import '../styles/global.css';
-import Header from '@components/Header.astro';
-import Footer from '@components/Footer.astro';
-import { SITE } from '@config/site';
+import "../styles/global.css";
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+import { SITE } from "@config/site";
 
 interface Props {
   title?: string;
@@ -11,10 +11,7 @@ interface Props {
 
 const currentPathname = Astro.url.pathname;
 
-const { 
-  title = SITE.title, 
-  description = SITE.description 
-} = Astro.props;
+const { title = SITE.title, description = SITE.description } = Astro.props;
 ---
 
 <!doctype html>

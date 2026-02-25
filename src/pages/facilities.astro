@@ -1,62 +1,60 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Section from '../components/ui/Section.astro';
-import { Image } from 'astro:assets';
-import ImageReveal from '../components/react/ImageReveal';
-
-import northAmericanHubImg from '@assets/photo-1566576721346-d4a3b4eaeb55.jpg';
-import westCoastDistributionImg from '@assets/photo-1586528116311-ad8dd3c8310d.jpg';
-import eastCoastOperationsImg from '@assets/photo-1553413077-190dd305871c.jpg';
-
-import ctaBgImg from '@assets/photo-1565043589221-1a6fd9ae45c7.jpg';
+import { Image } from "astro:assets";
+import eastCoastOperationsImg from "@assets/photo-1553413077-190dd305871c.jpg";
+import ctaBgImg from "@assets/photo-1565043589221-1a6fd9ae45c7.jpg";
+import northAmericanHubImg from "@assets/photo-1566576721346-d4a3b4eaeb55.jpg";
+import westCoastDistributionImg from "@assets/photo-1586528116311-ad8dd3c8310d.jpg";
+import ImageReveal from "../components/react/ImageReveal";
+import Section from "../components/ui/Section.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const facilities = [
   {
-    name: '公司总部',
-    location: '广西南宁',
-    address: '广西南宁市青秀区建政路5号',
-    type: '管理与研发中心',
-    size: '核心办公区',
+    name: "公司总部",
+    location: "广西南宁",
+    address: "广西南宁市青秀区建政路5号",
+    type: "管理与研发中心",
+    size: "核心办公区",
     image: northAmericanHubImg,
     icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
     </svg>`,
-    phone: '0771-4836481',
-    email: 'gxygxxkj@163.com',
-    manager: '业务部',
-    hours: '周一至周五: 8:30 - 18:00',
+    phone: "0771-4836481",
+    email: "gxygxxkj@163.com",
+    manager: "业务部",
+    hours: "周一至周五: 8:30 - 18:00",
     features: [
-      '公司行政管理中心',
-      '技术研发中心',
-      '数据处理中心',
-      '客户服务中心',
-      '多功能展示厅'
+      "公司行政管理中心",
+      "技术研发中心",
+      "数据处理中心",
+      "客户服务中心",
+      "多功能展示厅",
     ],
-    certifications: ['高新技术企业', 'ISO 9001认证', '测绘甲级资质']
+    certifications: ["高新技术企业", "ISO 9001认证", "测绘甲级资质"],
   },
   {
-    name: '遥感数据处理中心',
-    location: '广西南宁',
-    address: '广西南宁市良庆区',
-    type: '数据生产基地',
-    size: '高性能计算集群',
+    name: "遥感数据处理中心",
+    location: "广西南宁",
+    address: "广西南宁市良庆区",
+    type: "数据生产基地",
+    size: "高性能计算集群",
     image: westCoastDistributionImg,
     icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
     </svg>`,
-    phone: '0771-87654321',
-    email: 'data@gxrsky.com',
-    manager: '生产部',
-    hours: '24小时自动化运行',
+    phone: "0771-87654321",
+    email: "data@gxrsky.com",
+    manager: "生产部",
+    hours: "24小时自动化运行",
     features: [
-      '卫星影像接收处理',
-      '实景三维建模生产',
-      '海量数据存储',
-      '云计算服务平台',
-      '保密数据管理'
+      "卫星影像接收处理",
+      "实景三维建模生产",
+      "海量数据存储",
+      "云计算服务平台",
+      "保密数据管理",
     ],
-    certifications: ['信息安全管理体系认证', 'CMMI认证']
-  }
+    certifications: ["信息安全管理体系认证", "CMMI认证"],
+  },
 ];
 ---
 

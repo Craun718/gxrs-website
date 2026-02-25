@@ -1,34 +1,50 @@
-import * as Label from '@radix-ui/react-label';
-import * as Checkbox from '@radix-ui/react-checkbox';
-import { Check, User, Building2, Briefcase, Warehouse, Factory, Truck, Network, Wrench, Cpu, Calendar, Package } from 'lucide-react';
+import * as Checkbox from "@radix-ui/react-checkbox";
+import * as Label from "@radix-ui/react-label";
+import {
+  Briefcase,
+  Building2,
+  Calendar,
+  Check,
+  Cpu,
+  Factory,
+  Network,
+  Package,
+  Truck,
+  User,
+  Warehouse,
+  Wrench,
+} from "lucide-react";
 
 export default function RFQForm() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     const form = e.currentTarget;
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
-    
+
     // In a real application, you would send this to your backend
-    console.log('Form submitted:', data);
-    
+    console.log("Form submitted:", data);
+
     // Show success message
-    alert('感谢您的咨询！我们将在24小时内与您联系。');
+    alert("感谢您的咨询！我们将在24小时内与您联系。");
     form.reset();
   };
 
   return (
-    <form className="space-y-6" id="rfq-form" onSubmit={handleSubmit} name="rfq-form">
+    <form
+      className="space-y-6"
+      id="rfq-form"
+      onSubmit={handleSubmit}
+      name="rfq-form"
+    >
       {/* Contact Information */}
       <div>
         <div className="flex items-center mb-6">
           <div className="w-10 h-10 rounded-lg bg-linear-to-br from-blue-600 to-teal-600 flex items-center justify-center mr-3">
             <User className="w-5 h-5 text-white" />
           </div>
-          <h2 className="text-2xl font-bold text-gray-900">
-            联系信息
-          </h2>
+          <h2 className="text-2xl font-bold text-gray-900">联系信息</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
@@ -100,9 +116,7 @@ export default function RFQForm() {
           <div className="w-10 h-10 rounded-lg bg-linear-to-br from-purple-600 to-pink-600 flex items-center justify-center mr-3">
             <Building2 className="w-5 h-5 text-white" />
           </div>
-          <h2 className="text-2xl font-bold text-gray-900">
-            公司信息
-          </h2>
+          <h2 className="text-2xl font-bold text-gray-900">公司信息</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
@@ -152,9 +166,7 @@ export default function RFQForm() {
           <div className="w-10 h-10 rounded-lg bg-linear-to-br from-green-600 to-emerald-600 flex items-center justify-center mr-3">
             <Briefcase className="w-5 h-5 text-white" />
           </div>
-          <h2 className="text-2xl font-bold text-gray-900">
-            服务需求
-          </h2>
+          <h2 className="text-2xl font-bold text-gray-900">服务需求</h2>
         </div>
         <div className="space-y-6">
           <div>
@@ -163,12 +175,16 @@ export default function RFQForm() {
             </Label.Root>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[
-                { id: 'warehousing', label: '遥感影像数据处理', icon: Warehouse },
-                { id: 'manufacturing', label: '实景三维建设', icon: Factory },
-                { id: 'transportation', label: 'AI智能监测', icon: Truck },
-                { id: 'supply-chain', label: '自然资源确权', icon: Network },
-                { id: 'value-added', label: '国土空间规划', icon: Wrench },
-                { id: 'technology', label: '智慧应用开发', icon: Cpu },
+                {
+                  id: "warehousing",
+                  label: "遥感影像数据处理",
+                  icon: Warehouse,
+                },
+                { id: "manufacturing", label: "实景三维建设", icon: Factory },
+                { id: "transportation", label: "AI智能监测", icon: Truck },
+                { id: "supply-chain", label: "自然资源确权", icon: Network },
+                { id: "value-added", label: "国土空间规划", icon: Wrench },
+                { id: "technology", label: "智慧应用开发", icon: Cpu },
               ].map((service) => {
                 const IconComponent = service.icon;
                 return (
@@ -274,8 +290,19 @@ export default function RFQForm() {
           className="w-full bg-linear-to-r from-blue-600 to-teal-600 text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:from-blue-700 hover:to-teal-700 transition-all duration-200 hover:shadow-xl active:scale-95 flex items-center justify-center space-x-2"
         >
           <span>提交咨询</span>
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          <svg
+            className="w-5 h-5"
+            aria-label="提交"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M13 7l5 5m0 0l-5 5m5-5H6"
+            />
           </svg>
         </button>
         <p className="text-sm text-gray-500 text-center mt-4">
@@ -285,4 +312,3 @@ export default function RFQForm() {
     </form>
   );
 }
-

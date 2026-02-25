@@ -1,5 +1,5 @@
-import * as Accordion from '@radix-ui/react-accordion';
-import { ChevronDown } from 'lucide-react';
+import * as Accordion from "@radix-ui/react-accordion";
+import { ChevronDown } from "lucide-react";
 
 interface Capability {
   title: string;
@@ -27,7 +27,11 @@ export default function CapabilityAccordion({ capabilities }: Props) {
                 <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-linear-to-br from-blue-500 to-teal-500 text-white shadow-md shrink-0">
                   <div
                     className="w-6 h-6"
-                    dangerouslySetInnerHTML={{ __html: capability.icon.replace('w-12 h-12', 'w-6 h-6').replace('currentColor', 'white') }}
+                    dangerouslySetInnerHTML={{
+                      __html: capability.icon
+                        .replace("w-12 h-12", "w-6 h-6")
+                        .replace("currentColor", "white"),
+                    }}
                   />
                 </div>
                 <div>
@@ -69,4 +73,3 @@ export default function CapabilityAccordion({ capabilities }: Props) {
     </Accordion.Root>
   );
 }
-

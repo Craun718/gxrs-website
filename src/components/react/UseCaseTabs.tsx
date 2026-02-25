@@ -1,21 +1,21 @@
-import * as Tabs from '@radix-ui/react-tabs';
-import { 
-  ShoppingCart, 
-  Heart, 
-  Car, 
-  Laptop, 
-  Package, 
-  UtensilsCrossed,
-  CheckCircle2,
+import * as Tabs from "@radix-ui/react-tabs";
+import {
   AlertCircle,
+  AlertTriangle,
+  Car,
+  CheckCircle2,
+  Heart,
+  Home,
+  Laptop,
+  Leaf,
   Lightbulb,
-  Trees as Tree,
   Map,
   Mountain,
-  AlertTriangle,
-  Home,
-  Leaf
-} from 'lucide-react';
+  Package,
+  ShoppingCart,
+  Trees as Tree,
+  UtensilsCrossed,
+} from "lucide-react";
 
 interface UseCase {
   industry: string;
@@ -55,7 +55,7 @@ export default function UseCaseTabs({ useCases }: Props) {
         {industries.map((industry) => {
           const useCase = useCases.find((uc) => uc.industry === industry);
           const IconComponent = useCase ? iconMap[useCase.iconName] : null;
-          
+
           return (
             <Tabs.Trigger
               key={industry}
@@ -78,9 +78,9 @@ export default function UseCaseTabs({ useCases }: Props) {
         const IconComponent = iconMap[useCase.iconName];
 
         return (
-          <Tabs.Content 
-            key={industry} 
-            value={industry} 
+          <Tabs.Content
+            key={industry}
+            value={industry}
             className="space-y-6 animate-fadeIn"
           >
             <div className="bg-white rounded-2xl border border-gray-200 shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 group">
@@ -148,9 +148,9 @@ export default function UseCaseTabs({ useCases }: Props) {
                         Results
                       </h3>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        {useCase.results.map((result, idx) => (
+                        {useCase.results.map((result) => (
                           <div
-                            key={idx}
+                            key={`result-${result.replace(/\s+/g, "-").toLowerCase()}`}
                             className="flex items-start gap-3 bg-green-50 rounded-lg p-4 border border-green-100"
                           >
                             <CheckCircle2 className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />

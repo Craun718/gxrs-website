@@ -1,16 +1,19 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Section from '../../components/ui/Section.astro';
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
+import Section from "../../components/ui/Section.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
 const formatDate = (date: Date) => {
   const y = date.getFullYear();
-  const m = String(date.getMonth() + 1).padStart(2, '0');
-  const d = String(date.getDate()).padStart(2, '0');
+  const m = String(date.getMonth() + 1).padStart(2, "0");
+  const d = String(date.getDate()).padStart(2, "0");
   return `${y}-${m}-${d}`;
 };
 
-const announcements = await getCollection('announcements');
-const sortedAnnouncements = announcements.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+const announcements = await getCollection("announcements");
+const sortedAnnouncements = announcements.sort(
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
+);
 ---
 
 <BaseLayout
@@ -20,15 +23,23 @@ const sortedAnnouncements = announcements.sort((a, b) => b.data.publishDate.valu
   <!-- Hero Section -->
   <section class="bg-slate-900 py-20 relative overflow-hidden">
     <div class="absolute inset-0">
-      <div class="absolute inset-0 bg-linear-to-r from-slate-900 to-blue-900/50"></div>
+      <div
+        class="absolute inset-0 bg-linear-to-r from-slate-900 to-blue-900/50"
+      >
+      </div>
     </div>
     <div class="container mx-auto px-4 relative z-10 text-center">
-      <div class="inline-flex items-center px-3 py-1 rounded-full bg-blue-900/50 border border-blue-700 text-blue-300 text-sm font-medium mb-6">
+      <div
+        class="inline-flex items-center px-3 py-1 rounded-full bg-blue-900/50 border border-blue-700 text-blue-300 text-sm font-medium mb-6"
+      >
         <span class="flex h-2 w-2 rounded-full bg-blue-400 mr-2"></span>
         新闻动态
       </div>
       <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
-        公司 <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-teal-400">公告</span>
+        <span
+          class="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-teal-400"
+          >近期公告</span
+        >
       </h1>
       <p class="text-xl text-slate-300 max-w-2xl mx-auto">
         及时了解我们的最新动态、重要通知与业务进展。
@@ -39,43 +50,60 @@ const sortedAnnouncements = announcements.sort((a, b) => b.data.publishDate.valu
   <!-- Announcement List -->
   <Section class="bg-slate-50">
     <div class="max-w-4xl mx-auto space-y-6">
-      {sortedAnnouncements.map((post) => (
-        <a href={`/announcements/${post.slug}`} class="block group">
-          <article class="bg-white rounded-xl shadow-sm hover:shadow-md transition-all p-6 border border-slate-100 group-hover:border-blue-200">
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
-              <div class="flex items-center gap-3">
-                <span class="px-3 py-1 text-xs font-semibold text-blue-700 bg-blue-50 rounded-full border border-blue-100">
-                  {post.data.tags?.[0] || '通知'}
-                </span>
-                <time datetime={post.data.publishDate.toISOString()} class="text-sm text-slate-500">
-                  {formatDate(post.data.publishDate)}
-                </time>
+      {
+        sortedAnnouncements.map((post) => (
+          <a href={`/announcements/${post.slug}`} class="block group">
+            <article class="bg-white rounded-xl shadow-sm hover:shadow-md transition-all p-6 border border-slate-100 group-hover:border-blue-200">
+              <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                <div class="flex items-center gap-3">
+                  <span class="px-3 py-1 text-xs font-semibold text-blue-700 bg-blue-50 rounded-full border border-blue-100">
+                    {post.data.tags?.[0] || "通知"}
+                  </span>
+                  <time
+                    datetime={post.data.publishDate.toISOString()}
+                    class="text-sm text-slate-500"
+                  >
+                    {formatDate(post.data.publishDate)}
+                  </time>
+                </div>
               </div>
-            </div>
-            
-            <h2 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
-              {post.data.title}
-            </h2>
-            
-            <p class="text-slate-600 line-clamp-2 mb-4">
-              {post.data.summary}
-            </p>
-            
-            <div class="flex items-center text-sm text-blue-600 font-medium group-hover:translate-x-1 transition-transform">
-              阅读全文
-              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </div>
-          </article>
-        </a>
-      ))}
-      
-      {sortedAnnouncements.length === 0 && (
-        <div class="text-center py-12">
-          <p class="text-slate-500">暂无公告信息。</p>
-        </div>
-      )}
+
+              <h2 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
+                {post.data.title}
+              </h2>
+
+              <p class="text-slate-600 line-clamp-2 mb-4">
+                {post.data.summary}
+              </p>
+
+              <div class="flex items-center text-sm text-blue-600 font-medium group-hover:translate-x-1 transition-transform">
+                阅读全文
+                <svg
+                  class="w-4 h-4 ml-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </article>
+          </a>
+        ))
+      }
+
+      {
+        sortedAnnouncements.length === 0 && (
+          <div class="text-center py-12">
+            <p class="text-slate-500">暂无公告信息。</p>
+          </div>
+        )
+      }
     </div>
   </Section>
 </BaseLayout>
