@@ -29,7 +29,8 @@ export default function MobileMenu() {
                 </a>
               </Dialog.Close>
             ))}
-            <div className="pt-4">
+            {/* 
+            <div class="pt-4">
               <Dialog.Close asChild>
                 <a
                   href="/rfq"
@@ -39,6 +40,7 @@ export default function MobileMenu() {
                 </a>
               </Dialog.Close>
             </div>
+            */}
           </div>
           <Dialog.Close asChild>
             <button

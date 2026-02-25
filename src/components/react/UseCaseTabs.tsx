@@ -8,7 +8,13 @@ import {
   UtensilsCrossed,
   CheckCircle2,
   AlertCircle,
-  Lightbulb
+  Lightbulb,
+  Trees as Tree,
+  Map,
+  Mountain,
+  AlertTriangle,
+  Home,
+  Leaf
 } from 'lucide-react';
 
 interface UseCase {
@@ -31,6 +37,12 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Laptop,
   Package,
   UtensilsCrossed,
+  Tree,
+  Map,
+  Mountain,
+  AlertTriangle,
+  Home,
+  Leaf,
 };
 
 export default function UseCaseTabs({ useCases }: Props) {

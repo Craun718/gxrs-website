@@ -177,7 +177,15 @@ const useCases:any[] = [
           </div>
         </div>
       </div>
-      <StatsCards client:visible />
+      <StatsCards 
+        client:visible 
+        stats={[
+          { value: '80%', label: '效率提升', iconName: 'TrendingDown' },
+          { value: '100%', label: '监测覆盖率', iconName: 'CheckCircle2' },
+          { value: '400+', label: '服务用户', iconName: 'Users' },
+          { value: '10+', label: '应用行业', iconName: 'Package' }
+        ]} 
+      />
     </div>
   </Section>
 
@@ -201,9 +209,11 @@ const useCases:any[] = [
       <p class="text-xl text-blue-100 mb-10">
         联系我们的专家团队，获取定制化的解决方案建议。
       </p>
+      <!--
       <Button href="/rfq" size="lg" class="bg-white! text-blue-900! hover:bg-blue-50!">
         立即咨询
       </Button>
+      -->
     </div>
   </Section>
 </BaseLayout>
