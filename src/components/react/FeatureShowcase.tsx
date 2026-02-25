@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Warehouse, Truck, Package, BarChart3, Shield, Headphones, Globe, Map, Database, FileText, Activity, Layers } from 'lucide-react';
+import { Globe, Map, Database, FileText, Activity, Layers } from 'lucide-react';
 
 import warehouseImg from '@assets/photo-1553413077-190dd305871c.jpg';
 import truckImg from '@assets/photo-1601584115197-04ecc0da31d7.jpg';
