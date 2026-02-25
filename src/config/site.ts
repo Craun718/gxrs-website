@@ -11,6 +11,7 @@ export const NAVIGATION = [
   { name: '核心能力', href: '/capabilities' },
   { name: '应用案例', href: '/use-cases' },
   { name: '关于我们', href: '/facilities' },
+  { name: '公司公告', href: '/announcements' },
 ] as const;
 
 export const SOCIAL_LINKS = {
