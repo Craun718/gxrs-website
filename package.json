@@ -21,16 +21,16 @@
     "@tailwindcss/vite": "^4.1.17",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
-    "astro": "^5.16.0",
+    "astro": "^7.2.8",
     "lucide-react": "^0.554.0",
     "motion": "^12.23.24",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "sharp": "^0.34.5",
+    "sharp": "^0.35.4",
     "tailwindcss": "^4.1.17"
   },
   "devDependencies": {
     "add": "2.0.6",
-    "pnpm": "10.30.2"
+    "pnpm": "10.34.5"
   }
 }
